@@ -1,0 +1,44 @@
+﻿@model FoodSuggestionWebApp.Models.ModelInput
+
+<div class="container mt-5">
+    <h2 class="mb-4">🍽️ Weather-Based Food Suggestion</h2>
+
+    <form asp-action="Index" method="post" class="card p-4 shadow-sm">
+        <div class="mb-3">
+            <label asp-for="Temperature" class="form-label">Temperature (°C)</label>
+            <input asp-for="Temperature" type="number" step="any" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Weather" class="form-label">Weather</label>
+            <select asp-for="Weather" class="form-select" required>
+                <option value="">-- Select Weather --</option>
+                <option>Sunny</option>
+                <option>Rainy</option>
+                <option>Cloudy</option>
+                <option>Snowy</option>
+                <option>Windy</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="TimeOfDay" class="form-label">Time of Day</label>
+            <select asp-for="TimeOfDay" class="form-select" required>
+                <option value="">-- Select Time --</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+                <option>Night</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Get Food Suggestion</button>
+    </form>
+
+    @if (ViewBag.Suggestion != null)
+    {
+        <div class="alert alert-success mt-4">
+            <strong>Suggested Food:</strong> @ViewBag.Suggestion
+        </div>
+    }
+</div>
