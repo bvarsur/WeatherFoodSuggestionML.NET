@@ -1,0 +1,24 @@
+﻿# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# Dotnet environment files
+.env
+*.db
+*.zip
+
+# Model files
+weatherFoodModel.zip
+model-metrics.txt
